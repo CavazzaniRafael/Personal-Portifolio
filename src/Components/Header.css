@@ -1,0 +1,93 @@
+.image-div {
+  z-index: 2;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+@keyframes fade {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale3d(0.3, 0.3, 0.3) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+}
+.background-image {
+  background-color: #10131b;
+  background-position: center left;
+  background-repeat: repeat-x;
+  display: block;
+  height: 26rem;
+  width: 23.3rem;
+  border-radius: 148px 80px 100px 110px;
+  animation-name: slidein;
+  animation-duration: 3s;
+  transform-style: preserve-3d;
+  animation: fade 1.2s ease-in-out;
+}
+.foreground-image {
+  top: -70px;
+  left: 5px;
+  width: 23rem;
+  height: auto;
+  transform: rotateY(180deg);
+  position: absolute;
+  border-radius: 148px 80px 109px 100px;
+}
+.text-header {
+  color: white;
+  background-color: transparent;
+  width: auto;
+  z-index: 2;
+  position: absolute;
+  top: 2rem;
+  height: auto;
+  width: 25rem;
+  left: 25rem;
+  padding: 0;
+  line-height: 1.5rem;
+  font-family: "Arvo", serif;
+  transform-style: preserve-3d;
+  animation: fade 0.5s ease-in-out;
+}
+
+.text-header h2 {
+  font-size: 3rem;
+}
+.text-header h1 {
+  font-size: 2.5rem;
+}
+.text-header h3 {
+  font-size: 2rem;
+}
+.text-header p {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .image-div {
+    left: 40%;
+    top: 45%;
+    transform: translate(-50%, -70%);
+  }
+
+  .foreground-image {
+    top: -5.5rem;
+    width: 18rem;
+    height: auto;
+  }
+
+  .background-image {
+    height: 19rem;
+    width: 18.5rem;
+  }
+  .text-header {
+    top: 20rem;
+    left: 0;
+  }
+}

@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+body {
+  height: auto;
+  display: flex;
+  margin: 0;
+
+  align-items: center;
+  min-height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.group {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.item {
+  width: 12vw;
+  height: 40vh;
+  background-position: top;
+  background-size: 75vh;
+  margin: 0.7vw;
+  border-radius: 2.5vw;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: normal;
+  font-family: "Rubik", sans-serif;
+}
+.item-active {
+  background-size: 100% 100%;
+}
+
+.item:hover {
+  justify-content: flex-start;
+}
+.content-div {
+  backdrop-filter: blur(2px);
+  height: 100%;
+
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.5s ease;
+  transform: translateY(30vh);
+  backdrop-filter: blur(10px);
+}
+
+.title-active {
+  transform: translateY(8vh);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.5s ease;
+}
+.copy {
+  opacity: 0;
+  width: 5vh;
+  transform: translateY(30vh);
+  transition: all 0.5s ease;
+  font-size: 16px;
+  color: white;
+}
+
+.copy-active {
+  text-transform: none;
+  opacity: 1;
+  max-width: 300px;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  transform: translateY(8vh);
+  transition: all 0.5s ease;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Cardo", serif;
+  color: white;
+}
+
+.btn {
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(30vh);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+.btn-active {
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: translateY(3vh);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+.btn-active:active {
+  background-color: rgb(43, 42, 42);
+}
+.btn-active:hover {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+.button-position {
+  position: fixed;
+}

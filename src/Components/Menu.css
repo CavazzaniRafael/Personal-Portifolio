@@ -1,0 +1,201 @@
+:root {
+  --perspective: 60rem;
+  --font-size: 6.25rem;
+  --split-position: 51%;
+  --split-thickness: 5px;
+  --split-color: #74042b;
+}
+
+.menu {
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+  transform-style: preserve-3d;
+  transform: perspective(var(--perspective));
+  position: fixed;
+  display: flex;
+}
+
+/* === Menu <ul> ===== */
+.Menu-list {
+  font-size: var(--font-size);
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotateX(-20deg) rotateY(25deg);
+}
+
+/* === Menu item ===== */
+.Menu-list-item {
+  position: relative;
+  color: transparent;
+  cursor: pointer;
+}
+
+/* === Split Line ===== */
+.Menu-list-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--split-position);
+  left: -10%;
+  right: -10%;
+  height: var(--split-thickness);
+  border-radius: var(--split-thickness);
+  margin-top: calc(-1 * var(--split-thickness) / 2);
+  background: var(--split-color);
+  transform: scale(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  z-index: 1;
+}
+
+/* === Top/bottom mask ===== */
+.Mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: var(--split-color);
+  top: 0;
+  height: var(--split-position);
+  transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+}
+
+.Mask span {
+  display: block;
+}
+
+/* === Bottom mask specific ===== */
+.Mask + .Mask {
+  top: calc(var(--split-position) - 0.1%);
+  height: calc(100% - var(--split-position) + 0.1%);
+}
+
+.Mask + .Mask span {
+  transform: translateY(calc(-1 * var(--split-position)));
+}
+
+/* === Where the fun stuff happens ===== */
+.Menu-list-item:hover,
+.Menu-list-item:active {
+  .Mask {
+    color: #fff;
+    transform: skewX(12deg) translateX(10px);
+  }
+
+  .Mask + .Mask {
+    transform: skewX(12deg) translateX(-10px);
+  }
+
+  &::before {
+    transform: scale(1);
+  }
+}
+.menu-active {
+  .Mask {
+    color: #fff;
+    transform: skewX(12deg) translateX(10px);
+  }
+
+  .Mask + .Mask {
+    transform: skewX(12deg) translateX(-10px);
+  }
+
+  &::before {
+    transform: scale(1);
+  }
+}
+
+.work-effect-show {
+  transform-style: preserve-3d;
+  animation: appearin 1.5s ease-in-out;
+}
+@keyframes appearin {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  20% {
+    opacity: 1.5;
+    transform: scaleX(1.5);
+  }
+  40% {
+    opacity: 2;
+    transform: scaleX(1);
+  }
+  60% {
+    opacity: 2;
+    transform: scaleX(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+.work-effect-hide {
+  transform-style: preserve-3d;
+  animation: appearout 1s ease-in-out;
+}
+@keyframes appearout {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+.about-effect-hide {
+  transform-style: preserve-3d;
+  animation: appearout 1s ease-in-out;
+}
+@keyframes appearout {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+.contact-effect-show {
+  transform-style: preserve-3d;
+  animation: appearinContact 1.5s ease-in-out;
+}
+@keyframes appearinContact {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    opacity: 1.5;
+    transform: scaleY(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.contact-effect-hide {
+  transform-style: preserve-3d;
+  animation: appearoutContact 1s ease-in-out;
+}
+@keyframes appearoutContact {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
