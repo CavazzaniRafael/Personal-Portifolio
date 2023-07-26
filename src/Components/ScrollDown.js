@@ -55,18 +55,15 @@ const ScrollDown = () => {
       <div id="scroll-animate-main">
         <div className="wrapper-parallax">
           <header>
-            {/* <h1>Header</h1> */}
             <HeaderContent />
             <Background />
           </header>
 
           <section className="content">
-            {/* <h1>Content</h1> */}
             <div>
               <Menu />
             </div>
           </section>
-
           <footer>
             <Footer />
             <h1>Footer</h1>

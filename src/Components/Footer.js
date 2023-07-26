@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   const bubbles = [];
   for (let i = 0; i < 128; i++) {
-    const size = 2 + Math.random() * 2;
+    const size = 3 + Math.random() * 2;
     const distance = 6 + Math.random() * 4;
     const position = -5 + Math.random() * 110;
     const time = 2 + Math.random() * 2;
