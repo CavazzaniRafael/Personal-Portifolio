@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Button.css";
 
-const Button = () => {
+const Button = (props) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
+    if (!props.buttonAni) {
+      return;
+    }
     setIsActive(!isActive);
   };
 

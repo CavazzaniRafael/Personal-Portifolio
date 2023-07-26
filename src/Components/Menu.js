@@ -6,51 +6,8 @@ import Contact from "./Contents/Contact";
 
 const Menu = () => {
   const text =
-    "I am a professional who graduated in Computer Network and have 06 years of experience in customer service. Throughout my career, I have worked in small and medium-sized companies, but I am currently transitioning into the field of Information Technology, specifically focusing on front-end programming.My expertise lies in programming logic, code development, and creating robust systems with high quality. I prioritize code readability and have experience in layout development, website and system maintenance, as well as ensuring compliance with regulations. Additionally, I specialize in optimizing web pages for performance, scalability, and providing the best user experience.I possess the necessary skills to develop interfaces for web system projects using HTML, CSS, Bootstrap, WordPress, JavaScript, jQuery, Git, and GitHub technologies. My main focus is on front-end development, where I excel at translating creative designs into clean and bug-free code. I am dedicated to delivering results that meet and exceed expectations.";
+    "Experienced professional in Computer Networks with 6 years of customer service expertise. Transitioning into Information Technology, focusing on front-end programming. Skilled in programming logic, code development, and creating robust, high-quality systems. Prioritizing code readability, with experience in layout development, website maintenance, and regulatory compliance. Specializing in optimizing web pages for performance and scalability, delivering exceptional user experiences. Proficient in HTML, CSS, Bootstrap, JavaScript, jQuery, React Js, Git, and Github for front-end development. Dedicated to translating creative designs into clean, bug-free code that exceeds expectations.";
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const $menu = document.querySelector(".Menu-list");
-      const $item = document.querySelectorAll(".Menu-list-item");
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-
-      const offsetX = 0.5 - e.pageX / w;
-      const offsetY = 0.5 - e.pageY / h;
-      const dy = e.pageY - h / 4;
-      const dx = e.pageX - w / 4;
-      const theta = Math.atan2(dy, dx);
-      let angle = (theta * 180) / Math.PI - 90;
-
-      if (angle < 0) {
-        angle += 360;
-      }
-
-      const offsetPoster = $menu.dataset.offset;
-      const transformPoster = `translate3d(0, ${
-        -offsetX * offsetPoster
-      }px, 0) rotateX(${-offsetY * offsetPoster}deg) rotateY(${
-        offsetX * (offsetPoster * 3)
-      }deg)`;
-
-      $menu.style.transform = transformPoster;
-
-      $item.forEach((item) => {
-        const offsetLayer = item.dataset.offset || 0;
-        const transformLayer = `translate3d(${offsetX * offsetLayer}px, ${
-          offsetY * offsetLayer
-        }px, 20px)`;
-
-        item.style.transform = transformLayer;
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
   const [WorkClasses, setWorkClasses] = useState("");
   const [menu, setMenu] = useState({ about: "", work: "", contact: "" });
 

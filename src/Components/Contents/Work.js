@@ -63,7 +63,7 @@ const Work = (props) => {
     gsap.to(".item", {
       duration: 2,
       ease: "elastic.out(1, 0.3)",
-      width: (index) => (items[index].clicked ? "30vw" : "10vw"),
+      width: (index) => (items[index].clicked ? "40vw" : "10vw"),
       className: (index) => (items[index].active ? "item item-active" : "item"),
     });
   }, [items]);

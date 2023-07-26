@@ -3,6 +3,7 @@ import "./ScrollDown.css";
 import Background from "./Background";
 import Menu from "./Menu";
 import HeaderContent from "./Header";
+import Footer from "./Footer";
 
 const ScrollDown = () => {
   useEffect(() => {
@@ -67,6 +68,7 @@ const ScrollDown = () => {
           </section>
 
           <footer>
+            <Footer />
             <h1>Footer</h1>
           </footer>
         </div>
